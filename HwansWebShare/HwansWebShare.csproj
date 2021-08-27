@@ -35,8 +35,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="SimpleTcp, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SimpleTcpLib.1.0.3\lib\netstandard2.0\SimpleTcp.dll</HintPath>
+    <Reference Include="SimpleTcp, Version=1.0.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleTcpLib.1.0.6\lib\netstandard2.0\SimpleTcp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -66,6 +66,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="HttpServer\HttpRequest.cs" />
+    <Compile Include="HttpServer\HttpResponse.cs" />
+    <Compile Include="HttpServer\HwansWebServer.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

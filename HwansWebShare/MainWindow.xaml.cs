@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using HwansWebShare.HttpServer;
 
 namespace HwansWebShare
 {
@@ -23,6 +24,8 @@ namespace HwansWebShare
         public MainWindow()
         {
             InitializeComponent();
+
+            HwansWebServer.Instance.Start();
         }
     }
 }

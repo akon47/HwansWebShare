@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using HwansWebShare.HttpServer;
 
 namespace HwansWebShare
 {
@@ -13,5 +14,15 @@ namespace HwansWebShare
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+        }
+
+        protected override void OnExit(ExitEventArgs e)
+        {
+            base.OnExit(e);
+            HwansWebServer.Instance.Dispose();
+        }
     }
 }
