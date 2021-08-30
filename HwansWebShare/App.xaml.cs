@@ -5,7 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
-using HwansWebShare.HttpServer;
+using HwansWebShare.WebServer;
 
 namespace HwansWebShare
 {
@@ -22,7 +22,7 @@ namespace HwansWebShare
         protected override void OnExit(ExitEventArgs e)
         {
             base.OnExit(e);
-            HwansWebServer.Instance.Dispose();
+            WebShareServer.Instance.Dispose();
         }
     }
 }
