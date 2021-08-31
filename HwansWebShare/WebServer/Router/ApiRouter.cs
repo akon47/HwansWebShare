@@ -9,13 +9,17 @@ namespace HwansWebShare.WebServer
 {
     public class ApiRouter : BaseRouter
     {
-        protected override string UrlMatchPattern => "^\\/api$";
+        protected override string UrlMatchPattern => "^\\/api\\/";
+
+        private IRouter[] routers;
 
         public override HttpResponse Process(IHttpRequest httpRequest)
         {
+            string url = httpRequest.Url.Substring(4);
+
             return new HttpResponse(HttpStatusCode.OK)
             {
-                Content = Encoding.UTF8.GetBytes("API !!")
+                Content = Encoding.UTF8.GetBytes("ApiRouter -> " + httpRequest.Url)
             };
         }
     }

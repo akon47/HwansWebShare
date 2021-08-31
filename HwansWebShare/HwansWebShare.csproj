@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MimeTypes, Version=2.3.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MimeTypeMapOfficial.1.0.17\lib\net452\MimeTypes.dll</HintPath>
+    </Reference>
     <Reference Include="SimpleTcp, Version=1.0.8.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SimpleTcpLib.1.0.8\lib\netstandard2.0\SimpleTcp.dll</HintPath>
     </Reference>
@@ -66,6 +69,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="AppConstants.cs" />
     <Compile Include="NotifyPropertyBase.cs" />
     <Compile Include="WebServer\Router\ApiRouter.cs" />
     <Compile Include="WebServer\Router\IRouter.cs" />

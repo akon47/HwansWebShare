@@ -38,8 +38,8 @@ namespace HwansWebShare.WebServer
             httpServer.HttpRequest += HttpServer_HttpRequest;
 
             routers = new List<IRouter>();
-            routers.Add(new HtmlRouter());
             routers.Add(new ApiRouter());
+            routers.Add(new HtmlRouter(AppConstants.HtmlFolderPath));
         }
         #endregion
 
@@ -82,9 +82,12 @@ namespace HwansWebShare.WebServer
                 var matchedRouter = routers.SingleOrDefault(router => router.IsRequestMatched(e.Request));
                 return matchedRouter != null ? matchedRouter.Process(e.Request) : new HttpResponse(HttpStatusCode.NotFound);
             }
-            catch
+            catch(Exception ex)
             {
-                return new HttpResponse(HttpStatusCode.InternalServerError);
+                return new HttpResponse(HttpStatusCode.InternalServerError)
+                {
+                    Content = Encoding.UTF8.GetBytes(ex.Message)
+                };
             }
         }
         #endregion
