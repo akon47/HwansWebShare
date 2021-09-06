@@ -5,8 +5,68 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HwansWebShare"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="" Height="450" Width="800">
+	<DockPanel>
+		<StatusBar DockPanel.Dock="Bottom" Padding="1,1">
+			<StatusBar.Resources>
+				<Style TargetType="{x:Type StatusBarItem}">
+					<Setter Property="BorderBrush" Value="DarkGray" />
+					<Setter Property="BorderThickness" Value="1" />
+					<Setter Property="Margin" Value="2" />
+					<Setter Property="Padding" Value="5,2" />
+				</Style>
+			</StatusBar.Resources>
+			<StatusBar.ItemsPanel>
+				<ItemsPanelTemplate>
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="Auto" />
+							<ColumnDefinition Width="Auto" />
+							<ColumnDefinition Width="Auto" />
+							<ColumnDefinition Width="*" />
+							<ColumnDefinition Width="Auto" />
+						</Grid.ColumnDefinitions>
+					</Grid>
+				</ItemsPanelTemplate>
+			</StatusBar.ItemsPanel>
+			<StatusBarItem Grid.Column="0">
+				<TextBlock Text="보내는중: 0 KB/s" />
+			</StatusBarItem>
+			<StatusBarItem Grid.Column="1">
+				<TextBlock Text="받는중: 0 KB/s" />
+			</StatusBarItem>
+			<StatusBarItem Grid.Column="2">
+				<TextBlock Text="접속자: 0" />
+			</StatusBarItem>
+			<StatusBarItem Grid.Column="4">
+				<Grid>
+					<TextBlock Text="00:00:00" />
+				</Grid>
+			</StatusBarItem>
+		</StatusBar>
+
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="40" />
+				<RowDefinition Height="*" />
+			</Grid.RowDefinitions>
+			<Border Grid.Column="0" Grid.Row="0" Background="#212121">
+				<Grid>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="150" />
+						<ColumnDefinition Width="*" />
+					</Grid.ColumnDefinitions>
+					<TextBlock Text="WebShare" VerticalAlignment="Center" FontSize="25" FontWeight="Bold" Margin="20,0,0,0" Foreground="White"/>
+					<Grid Grid.Column="1" Grid.Row="0">
+						<Border CornerRadius="3" Background="#808080" VerticalAlignment="Center" Margin="5,0">
+							<TextBox Text="http://127.0.0.1/" Background="Transparent" Foreground="White" Margin="5" BorderBrush="{x:Null}" BorderThickness="0"/>
+						</Border>
+					</Grid>
+				</Grid>
+			</Border>
+			<Border Grid.Column="0" Grid.Row="1" Background="White">
+				
+			</Border>
+		</Grid>
+	</DockPanel>
 </Window>
