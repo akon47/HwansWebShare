@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="KeyValueConfig, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\KeyValueConfig.1.0.0\lib\netstandard2.0\KeyValueConfig.dll</HintPath>
+    </Reference>
     <Reference Include="MimeTypes, Version=2.3.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MimeTypeMapOfficial.1.0.17\lib\net452\MimeTypes.dll</HintPath>
     </Reference>

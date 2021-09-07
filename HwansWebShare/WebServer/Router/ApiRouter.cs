@@ -11,8 +11,6 @@ namespace HwansWebShare.WebServer
     {
         protected override string UrlMatchPattern => "^\\/api\\/";
 
-        private IRouter[] routers;
-
         public override HttpResponse Process(IHttpRequest httpRequest)
         {
             string url = httpRequest.Url.Substring(4);
