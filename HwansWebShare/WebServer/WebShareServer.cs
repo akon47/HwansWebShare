@@ -44,12 +44,7 @@ namespace HwansWebShare.WebServer
         #endregion
 
         #region Properties
-        private string rootDirecotry;
-        public string RootDirectory
-        {
-            get => rootDirecotry;
-            set => SetProperty(ref rootDirecotry, value);
-        }
+        public SharedItem.SharedDirectories SharedDirectories { get; private set; } = new SharedItem.SharedDirectories();
         #endregion
 
         #region Private Members

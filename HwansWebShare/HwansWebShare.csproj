@@ -79,6 +79,9 @@
     <Compile Include="AppConstants.cs" />
     <Compile Include="CustomConverter.cs" />
     <Compile Include="NotifyPropertyBase.cs" />
+    <Compile Include="WebServer\SharedItem\ObserveableCollection.cs" />
+    <Compile Include="WebServer\SharedItem\SharedDirectories.cs" />
+    <Compile Include="WebServer\SharedItem\SharedDirectory.cs" />
     <Compile Include="WebServer\Router\ApiRouter.cs" />
     <Compile Include="WebServer\Router\IRouter.cs" />
     <Compile Include="WebServer\Router\HtmlRouter.cs" />
