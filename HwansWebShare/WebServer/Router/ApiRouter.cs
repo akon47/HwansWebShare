@@ -11,13 +11,20 @@ namespace HwansWebShare.WebServer
     {
         protected override string UrlMatchPattern => "^\\/api\\/";
 
+        private SharedItem.SharedDirectories _sharedDirectories;
+
+        public ApiRouter(SharedItem.SharedDirectories sharedDirectories)
+        {
+            _sharedDirectories = sharedDirectories;
+        }
+
         public override HttpResponse Process(IHttpRequest httpRequest)
         {
             string url = httpRequest.Url.Substring(4);
 
             return new HttpResponse(HttpStatusCode.OK)
             {
-                Content = Encoding.UTF8.GetBytes("ApiRouter -> " + httpRequest.Url)
+                Content = Encoding.UTF8.GetBytes("ApiRouter -> " + httpRequest.Url + "<br/>" + string.Join("<br/>", _sharedDirectories.Select(s => s.Path)))
             };
         }
     }

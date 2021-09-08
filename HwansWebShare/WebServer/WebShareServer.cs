@@ -38,12 +38,17 @@ namespace HwansWebShare.WebServer
             httpServer.HttpRequest += HttpServer_HttpRequest;
 
             routers = new List<IRouter>();
-            routers.Add(new ApiRouter());
+            routers.Add(new ApiRouter(SharedDirectories));
             routers.Add(new HtmlRouter(AppConstants.HtmlFolderPath));
         }
         #endregion
 
         #region Properties
+        public bool IsStarted
+        {
+            get => httpServer?.IsStarted ?? false;
+        }
+
         public SharedItem.SharedDirectories SharedDirectories { get; private set; } = new SharedItem.SharedDirectories();
         #endregion
 
